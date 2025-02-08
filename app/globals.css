@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-type-machine);
+}
+
+h1, h2, label, button {
+  font-family: var(--font-androgy-demo);
+}
+h2 {
+  font-size: 90px;
+}
