@@ -61,7 +61,7 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Type here..."
-            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8"
+            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 rounded-none"
             required
             autoComplete="ture"
           />
@@ -74,7 +74,7 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Type here..."
-            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8"
+            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 rounded-none"
             required
             autoComplete="ture"
           />
@@ -86,7 +86,7 @@ export default function Contact() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="Type here..."
-            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8"
+            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 rounded-none"
             autoComplete="ture"
           />
 
@@ -97,7 +97,7 @@ export default function Contact() {
             value={formData.subject}
             onChange={handleChange}
             placeholder="Type here..."
-            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8"
+            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-1 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 rounded-none"
             required
           />
 
@@ -108,7 +108,7 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Type here..."
-            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-2 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 h-[120px]"
+            className="border border-[#252626] bg-transparent placeholder:text-[12px] pl-2 py-2 placeholder:text-[#8d8d8d] mb-2 lg:mb-8 h-[120px] rounded-none"
             required
           />
 

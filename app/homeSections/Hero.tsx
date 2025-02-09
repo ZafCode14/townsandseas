@@ -17,25 +17,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-[400px] md:h-[700px] lg:h-screen w-full overflow-hidden">
-      <div
-        className="flex w-full h-full transition-transform duration-[2s] ease-in-out"
-        style={{
-          transform: `translateX(-${index * 100}%)`, // Move images left
-        }}
-      >
-        {list.map((el, i) => (
-          <Image
-            priority
-            key={i}
-            alt="hero image"
-            src={`/images/${el}.jpg`}
-            width={3000}
-            height={3000}
-            className="min-w-full h-full object-cover"
-          />
-        ))}
-      </div>
+    <section className="relative h-[400px] md:h-[700px] lg:h-screen w-full overflow-hidden">
+      {list.map((el, i) => (
+        <Image
+          key={i}
+          priority
+          alt="hero image"
+          src={`/images/${el}.jpg`}
+          width={3000}
+          height={3000}
+          className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-1000 ${
+            i === index ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
     </section>
   );
 }
