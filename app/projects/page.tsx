@@ -21,7 +21,7 @@ export default function ProjectsPage() {
         src={'/images/launchingMiddleStamp.png'}
         width={1000}
         height={1000}
-        className="h-[250px] w-auto object-contain absolute bottom-10 right-[20%]"
+        className="h-[100px] md:h-[175px] lg:h-[250px] w-auto object-contain absolute bottom-10 right-[20%]"
       />
 
       <Image
@@ -29,7 +29,7 @@ export default function ProjectsPage() {
         src={'/images/launchingRightStamp.png'}
         width={1000}
         height={1000}
-        className="h-[250px] w-auto object-contain absolute right-5 top-[30%]"
+        className="h-[100px] md:h-[175px] lg:h-[250px] w-auto object-contain absolute right-5 top-[30%]"
       />
 
       <Image
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
         src={'/images/launchingLeftStamp.png'}
         width={1000}
         height={1000}
-        className="h-[150px] w-auto object-contain absolute left-5 bottom-[30%]"
+        className="h-[75px] md:h-[100px] lg:h-[150px] w-auto object-contain absolute left-5 bottom-[30%]"
       />
     </main>
   );

@@ -22,8 +22,12 @@ export default function Header() {
       `}>
         {/** Left side of the header */}
         <div className={`hidden lg:flex justify-around flex-1 h-full pt-2`}>
-          <HeaderLink name="ABOUT US" path="/about"/>
-          <HeaderLink name="OUR PROJECTS" path="/projects"/>
+          <div className="hover:translate-x-[20px] duration-300 transition-all">
+            <HeaderLink name="ABOUT US" path="/about"/>
+          </div>
+          <div className="hover:translate-x-[20px] duration-300 transition-all">
+            <HeaderLink name="OUR PROJECTS" path="/projects"/>
+          </div>
         </div>
 
         {/** Header Logo */}
@@ -39,8 +43,8 @@ export default function Header() {
 
         {/** Rigth Side of the header */}
         <div className={`justify-around flex-1 pt-2 hidden lg:flex`}>
-          <Link href={'/#offer'} className="hover:underline">WHAT WE OFFER</Link>
-          <Link href={'/#contact'} className="hover:underline">GET IN TOUCH</Link>
+          <Link href={'/#offer'} className="hover:underline hover:translate-x-[20px] duration-300 transition-all">WHAT WE OFFER</Link>
+          <Link href={'/#contact'} className="hover:underline hover:translate-x-[20px] duration-300 transition-all">GET IN TOUCH</Link>
         </div>
 
         <PhoneNav/>

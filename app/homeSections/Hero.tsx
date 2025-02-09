@@ -26,6 +26,7 @@ export default function Hero() {
       >
         {list.map((el, i) => (
           <Image
+            priority
             key={i}
             alt="hero image"
             src={`/images/${el}.jpg`}

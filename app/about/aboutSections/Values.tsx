@@ -42,7 +42,7 @@ export default function Values() {
             src={'/images/valuesStamp1.png'}
             width={1000}
             height={1000}
-            className="h-[150px] md:h-[200px] lg:h-[220px] xl:h-[250px] w-auto object-contain absolute left-0"
+            className="h-[100px] md:h-[150px] lg:h-[200px] xl:h-[250px] w-auto object-contain absolute left-0 top-[-20px] md:top-0"
           />
           <h2 className="mt-16 text-[30px] md:text-[50px] lg:text-[70px] xl:text-[90px]">Our core values</h2>
           <Image
@@ -50,7 +50,7 @@ export default function Values() {
             src={'/images/valuesStamp2.png'}
             width={1000}
             height={1000}
-            className="h-[70px] md:h-[90px] lg:h-[120px] xl:h-[150px] w-auto object-contain absolute right-0 top-32"
+            className="h-[70px] md:h-[90px] lg:h-[120px] xl:h-[150px] w-auto object-contain absolute right-0 top-12 md:top-32"
           />
         </div>
 

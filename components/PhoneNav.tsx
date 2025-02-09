@@ -8,7 +8,7 @@ export default function PhoneNav() {
   return (
     <>
       {/** Burger */}
-      <div className="absolute w-7 h-5 right-5 lg:hidden flex flex-col justify-between" onClick={() => setShow(true)}>
+      <div className="absolute w-7 h-5 right-5 lg:hidden flex flex-col justify-between cursor-pointer" onClick={() => setShow(true)}>
         <div className="w-full h-[20%] bg-[#F9EFE8] rounded-md"></div>
         <div className="w-full h-[20%] bg-[#F9EFE8] rounded-md"></div>
         <div className="w-full h-[20%] bg-[#F9EFE8] rounded-md"></div>
