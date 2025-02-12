@@ -18,8 +18,8 @@ export default function AboutS() {
       <Image
         alt="stamps"
         src={'/images/stamps/stampTwoGray.png'}
-        width={1000}
-        height={1000}
+        width={300}
+        height={300}
         className="w-[120px] md:w-[150px] lg:w-[200px] h-auto mt-5 mg:mt-10 self-end md:self-start"
       />
       <div className="w-[850px] max-w-full relative top-[-50px] md:top-[-100px] lg:left-[50px]">

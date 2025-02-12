@@ -15,9 +15,9 @@ export default function Golas() {
 
       <Image
         alt="goals stamp"
-        src={'/images/goalsStamp.png'}
-        width={1000}
-        height={1000}
+        src={'/images/stamps/stampOrangeRound.png'}
+        width={300}
+        height={300}
         className="h-[20vw] xl:h-[200px] w-auto object-contain relative lg:absolute right-0 md:right-5 lg:top-[300px] self-end"
       />
 

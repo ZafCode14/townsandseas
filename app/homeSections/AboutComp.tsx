@@ -17,9 +17,9 @@ export default function AboutComp({ title, text }:Props) {
         </div>
         <Image
           alt="info stamp"
-          src={'/images/infoStamp.png'}
-          width={1000}
-          height={1000}
+          src={'/images/stamps/stampMain.png'}
+          width={500}
+          height={500}
           className={`
             w-[50%] md:w-[30%]
           `}

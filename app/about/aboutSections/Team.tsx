@@ -25,9 +25,9 @@ export default function Team() {
 
       <Image
         alt="goals stamp"
-        src={'/images/goalsStamp.png'}
-        width={1000}
-        height={1000}
+        src={'/images/stamps/stampOrangeRound.png'}
+        width={300}
+        height={300}
         className="h-[20vw] xl:h-[200px] w-auto object-contain absolute right-5 top-[-10vw] xl:top-[-100px] self-end"
       />
     </section>

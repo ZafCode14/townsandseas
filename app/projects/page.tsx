@@ -18,7 +18,7 @@ export default function ProjectsPage() {
 
       <Image
         alt="middle stamp"
-        src={'/images/launchingMiddleStamp.png'}
+        src={'/images/stamps/launchingMiddleStamp.png'}
         width={1000}
         height={1000}
         className="h-[100px] md:h-[175px] lg:h-[250px] w-auto object-contain absolute bottom-10 right-[20%]"
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
 
       <Image
         alt="right stamp"
-        src={'/images/launchingRightStamp.png'}
+        src={'/images/stamps/launchingRightStamp.png'}
         width={1000}
         height={1000}
         className="h-[100px] md:h-[175px] lg:h-[250px] w-auto object-contain absolute right-5 top-[30%]"
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
 
       <Image
         alt="Left stamp"
-        src={'/images/launchingLeftStamp.png'}
+        src={'/images/stamps/launchingLeftStamp.png'}
         width={1000}
         height={1000}
         className="h-[75px] md:h-[100px] lg:h-[150px] w-auto object-contain absolute left-5 bottom-[30%]"

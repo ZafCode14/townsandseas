@@ -20,17 +20,17 @@ export default function Mission() {
         {/** Image */}
         <Image
           alt="mission stamp"
-          src={'/images/missionStamp.png'}
-          width={1000}
-          height={1000}
+          src={'/images/stamps/stampOrange.png'}
+          width={300}
+          height={300}
           className="h-[21vw] xl:h-[250px] w-auto object-contain absolute top-0"
         />
         {/** Image */}
         <Image
           alt="vission stamp"
-          src={'/images/vissionStamp.png'}
-          width={1000}
-          height={1000}
+          src={'/images/stamps/stampParis.png'}
+          width={300}
+          height={300}
           className="h-[21vw] xl:h-[250px] w-auto object-contain absolute bottom-[-100px] md:bottom-[-150px] lg:bottom-[-200px] right-0 z-10"
         />
 

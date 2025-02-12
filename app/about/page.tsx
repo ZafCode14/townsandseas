@@ -13,9 +13,9 @@ export default function About() {
         <div className="flex-1">
           <Image
             alt="about stamp"
-            src={'/images/about.png'}
-            width={1000}
-            height={1000}
+            src={'/images/stamps/stampAboutMain.png'}
+            width={900}
+            height={900}
             className="object-contain"
           />
         </div>

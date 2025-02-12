@@ -14,9 +14,9 @@ export default function Offer() {
           `}>A name rooted in <br/>experiences</h2>
           <Image
             alt="footer logo"
-            src={'/icons/logo3.svg'}
-            width={0}
-            height={0}
+            src={'/images/stamps/stampHomeAbout.png'}
+            width={300}
+            height={300}
             className={`w-[80px] md:w-[110px] h-auto`}
           />
         </div>
