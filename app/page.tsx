@@ -1,6 +1,6 @@
 import Contact from "./homeSections/Contact";
 import Hero from "./homeSections/Hero";
-import Info from "./homeSections/Info";
+import Info from "./homeSections/About";
 import Offer from "./homeSections/Offer";
 
 export default function Home() {

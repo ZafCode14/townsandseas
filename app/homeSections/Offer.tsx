@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Offer() {
   return (
@@ -7,7 +8,10 @@ export default function Offer() {
         
         {/** Top part of the section */}
         <div className={`flex justify-between`}>
-          <h2 className="text-[32px] sm:text-[50px] md:text-[60px] lg:text-[90px]">What we offer?</h2>
+          <h2 className={`
+            text-[32px] md:text-[60px] lg:text-[90px]
+            leading-[40px] md:leading-[65px] lg:leading-[95px]
+          `}>A name rooted in <br/>experiences</h2>
           <Image
             alt="footer logo"
             src={'/icons/logo3.svg'}
@@ -18,20 +22,41 @@ export default function Offer() {
         </div>
 
         {/** Lower part of the section */}
-        <div className={`flex flex-col lg:flex-row justify-between md:mt-10 lg:mt-24`}>
+        <p className={`
+          w-full max-w-[1000px] 
+          text-[14px] md:text-[18px] lg:text-[24px] 
+          mt-5 md:mt-10 lg:mt-20
+          uppercase 
+        `}>Towns & Seas was founded on a love for places that tell stories. We take inspiration from the world’s most remarkable cities and coastlines, shaping architecture that respects history while embracing the future.</p>
+
+        <Link href={'/about'} className="self-end">
+          <h2 className={`
+            mt-5 md:mt-10
+            text-[20px] md:text-[30px] lg:text-[60px] 
+            underline underline-offset-4 decoration-[2px] lg:underline-offset-8
+          `}>discover more</h2>
+        </Link>
+
+        <div className={`flex flex-col md:flex-row mt-5 md:mt-10 lg:mt-20 w-full`}>
+          <h2 className={`
+            text-[32px] md:text-[60px] lg:text-[90px]
+            leading-[40px] md:leading-[65px] lg:leading-[95px]
+            md:w-[50%]
+          `}>Our approach</h2>
           <p className={`
-            text-[16px] leading-[32px] 
-            md:text-[18px] md:leading-[36px] 
-            lg:text-[20px] lg:leading-[40px] 
-            xl:text-[24px] xl:leading-[44px] 
-            lg:ml-20
-            mb-10 lg:mb-0
-          `}>CULTARALLY INFUSED DESIGN <br/>ARCHITECTURAL INNOVATION <br/>GLOBAL INSPIRATION</p>
-          <p className={`
-            w-full lg:w-[500px] xl:w-[730px] max-w-full text-[14px] md:text-[16px] lg:text-[14px] xl:text-[18px] uppercase
-          `}>We offer more than just buildings—we create environments that bring together culture, comfort, and modern design. Our projects are crafted to reflect the rich cultural heritage of their surroundings, honoring tradition while providing modern, inspiring spaces that nurture a sense of belonging.</p>
+            md:w-[50%]
+            text-[14px] md:text-[18px] lg:text-[24px] 
+            uppercase 
+          `}>We design with history in mind and purpose at heart. Every project is shaped by exploration, built with care, and crafted to belong.</p>
         </div>
 
+        <Link href={'/about'} className="self-end">
+          <h2 className={`
+            mt-5 md:mt-10
+            text-[20px] md:text-[30px] lg:text-[60px] 
+            underline underline-offset-4 decoration-[2px] lg:underline-offset-8
+          `}>learn more</h2>
+        </Link>
       </div>
     </section>
   );

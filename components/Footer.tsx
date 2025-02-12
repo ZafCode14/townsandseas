@@ -27,27 +27,33 @@ export default function Footer() {
           />
           {/** Icons */}
           <div className="flex mt-16">
-            <Image
-              alt="instagram icon"
-              src={'/icons/instagram.svg'}
-              width={0}
-              height={0}
-              className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5 lg:ml-10`}
-            />
-            <Image
-              alt="linkedin icon"
-              src={'/icons/linkedin.svg'}
-              width={0}
-              height={0}
-              className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
-            />
-            <Image
-              alt="facebook icon"
-              src={'/icons/facebook.svg'}
-              width={0}
-              height={0}
-              className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
-            />
+            <a href="https://www.instagram.com/townsandseas/" target="_blank" rel="noopener noreferrer">
+              <Image
+                alt="instagram icon"
+                src={'/icons/instagram.svg'}
+                width={0}
+                height={0}
+                className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5 lg:ml-10`}
+              />
+            </a>
+            <a href="https://www.linkedin.com/company/townsandseas/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
+              <Image
+                alt="linkedin icon"
+                src={'/icons/linkedin.svg'}
+                width={0}
+                height={0}
+                className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
+              />
+            </a>
+            <a href="https://www.facebook.com/Townsandseas" target="_blank" rel="noopener noreferrer">
+              <Image
+                alt="facebook icon"
+                src={'/icons/facebook.svg'}
+                width={0}
+                height={0}
+                className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
+              />
+            </a>
             <Image
               alt="phone icon"
               src={'/icons/phone.svg'}

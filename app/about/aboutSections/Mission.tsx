@@ -8,39 +8,62 @@ export default function Mission() {
 
   return (
     <section className={`${active !== "mission" && "hidden"} bg-[#636D46] flex justify-center w-full pb-24 pt-10 px-5`}>
-      <div className="w-[1400px] max-w-full text-[#F9EFE8] relative">
-        {/** Top Part */}
-        <div className={`flex flex-col md:flex-row w-full justify-between`}>
-          {/** Image */}
-          <Image
-            alt="mission stamp"
-            src={'/images/missionStamp.png'}
-            width={1000}
-            height={1000}
-            className="h-[150px] md:h-[200px] lg:h-[220px] xl:h-[250px] w-auto object-contain absolute left-[130px] top-0 md:static"
-          />
+      <div className="w-[1400px] max-w-full text-[#F9EFE8] relative flex flex-col">
+        {/** Title */}
+        <h2 className={`
+          self-end
+          max-w-[70vw] xl:max-w-[950px]
+          text-[6.5vw]  xl:text-[90px]
+          leading-[6.9vw] xl:leading-[95px]
+          mt-5 md:mt-10 lg:mt-20
+        `}>A Vision that travels, a craft that Endures</h2>
+        {/** Image */}
+        <Image
+          alt="mission stamp"
+          src={'/images/missionStamp.png'}
+          width={1000}
+          height={1000}
+          className="h-[21vw] xl:h-[250px] w-auto object-contain absolute top-0"
+        />
+        {/** Image */}
+        <Image
+          alt="vission stamp"
+          src={'/images/vissionStamp.png'}
+          width={1000}
+          height={1000}
+          className="h-[21vw] xl:h-[250px] w-auto object-contain absolute bottom-[-100px] md:bottom-[-150px] lg:bottom-[-200px] right-0 z-10"
+        />
+
+        <div className={`flex flex-col md:flex-row w-full justify-center mt-10 lg:mt-20`}>
           {/** Title */}
-          <h2 className="relative md:right-[50px] top-[90px] md:top-[110px] text-[30px] md:text-[50px] lg:text-[70px] xl:text-[90px]">Mission</h2>
+          <h2 className={`
+            self-start mb-5 md:mb-0 lg:px-5 xl:px-10
+            md:w-[30%] flex justify-center
+            text-[20px] md:text-[40px] lg:text-[60px]
+            leading-[20px] md:leading-[40px] lg:leading-[60px]
+          `}>our ethos are clear</h2>
           {/** Text */}
-          <p className="uppercase max-w-full relative top-[120px] md:top-[140px] w-[750px] mb-10 text-[14px] md:text-[16px] lg:text-[18px]">“At Towns & Seas, we create one-of-a-kind luxury destinations in the world’s most desirable cities. Through tailored experiences, innovation, sustainable practices, and world-class collaboration, we design vibrant communities that redefine urban and leisure living, prioritize customer satisfaction, and leave a lasting impact.”</p>
+          <p className={`
+            uppercase 
+            w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
+            max-w-full 
+          `}>Build spaces that carry the richness of global cultures.Blend architectural heritage with contemporary living.Create homes, streets, and landmarks that feel like they’ve always belonged. We design for the rhythm of life—where every pathway, every facade, every courtyard feels intentional, timeless, and true.</p>
         </div>
 
-        {/** Bottom Part */}
-        <div className="flex flex-col-reverse md:flex-row w-full justify-around mt-10 md:mt-44">
-          {/** Text */}
-          <p className="uppercase max-w-full relative top-5 md:top-[50px] w-[750px] md:mb-10 md:pr-10 xlg:pr-0 text-[14px] md:text-[16px] lg:text-[18px]">“To be the ultimate destination maker, crafting iconic spaces that inspire, connect, and enrich lives. At Towns & Seas, we redefine luxury by delivering exceptional experiences beyond real estate, shaping vibrant communities, and offering the ultimate lifestyle in the world’s most desirable cities.”</p>
+        <div className={`flex flex-col md:flex-row w-full justify-center mt-10 lg:mt-20`}>
           {/** Title */}
-          <>
-          <h2 className="relative  text-[30px] md:text-[50px] lg:text-[70px] xl:text-[90px]">Vission</h2>
-          {/** Image */}
-          <Image
-            alt="vission stamp"
-            src={'/images/vissionStamp.png'}
-            width={1000}
-            height={1000}
-            className="h-[150px] md:h-[200px] lg:h-[220px] xl:h-[250px] w-auto object-contain relative top-[50px]"
-          />
-          </>
+          <h2 className={`
+            self-start mb-5 md:mb-0 lg:px-5 xl:px-10
+            md:w-[30%] flex justify-center
+            text-[20px] md:text-[40px] lg:text-[60px]
+            leading-[20px] md:leading-[40px] lg:leading-[60px]
+          `}>Looking ahead</h2>
+          {/** Text */}
+          <p className={`
+            uppercase 
+            w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
+            max-w-full 
+          `}>To be the ultimate destination maker, crafting iconic spaces that inspire, connect, and enrich lives. At Towns & Seas, we redefine luxury by delivering exceptional experiences beyond real estate, shaping vibrant communities, and offering the ultimate lifestyle in the world’s most desirable cities</p>
         </div>
       </div>
     </section>

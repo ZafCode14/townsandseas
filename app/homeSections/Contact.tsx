@@ -49,8 +49,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="flex justify-center w-full py-10 lg:py-20">
-      <div className="w-[1300px] max-w-full flex flex-col-reverse lg:flex-row items-center lg:items-start">
+    <section className="flex justify-center w-full py-5 md:py-10">
+      <div className="w-[1300px] max-w-full flex flex-col items-center">
+      <p className={`mb-5 absolute self-start text-[#636D46] text-[14px] md:text-[18px] lg:text-[20px] px-5`}>GET IN TOUCH</p>
+      <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start w-full mt-5">
 
         {/** Form */}
         <form onSubmit={handleSend} className="flex flex-col w-[600px] max-w-full lg:w-[50%] text-[12px] pt-5 lg:pt-10 px-5 relative">
@@ -119,12 +121,14 @@ export default function Contact() {
 
         {/** Title */}
         <div className="text-[#636D46] flex flex-col items-center lg:w-[50%] px-10">
-          <p className="self-start mb-5">GET IN TOUCH</p>
-          <h2 className="lg:text-[5vw] text-[40px] 2xl:text-[80px] self-start leading-[50px] lg:leading-[6vw] 2xl:leading-[90px] md:mt-5 lg:mt-10">
-            We are happy to <br /> hear from You.
+          <h2 className="lg:text-[5vw] text-[40px] 2xl:text-[80px] self-start leading-[50px] lg:leading-[6vw] 2xl:leading-[90px] mt-10">
+            Live the story
           </h2>
+          <p className={`hidden md:block text-[14px] md:text-[18px] lg:text-[22px] uppercase mt-5 md:mt-10`}>Towns & Seas is a collaboration, a craft, a vision. Whether you’re a partner, an architect, or someone looking for a space that feels right, let’s create something that lasts together.</p>
+          <p className={`text-[16px] md:text-[24px] lg:text-[32px] md:self-start md:mt-10`}>BULID TO BELONG.</p>
         </div>
         
+      </div>
       </div>
     </section>
   );

@@ -31,7 +31,7 @@ export default function Header() {
         </div>
 
         {/** Header Logo */}
-        <Link href={'/#heor'} className="w-[150px] md:w-[200px] lg:w-[250px]">
+        <Link href={'/#hero'} className="w-[150px] md:w-[200px] lg:w-[250px]">
           <Image
             alt="footer logo"
             src={'/icons/logo1.svg'}
