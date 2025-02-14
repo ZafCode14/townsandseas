@@ -54,21 +54,12 @@ export default function Footer() {
                 className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
               />
             </a>
-            <Image
-              alt="phone icon"
-              src={'/icons/phone.svg'}
-              width={0}
-              height={0}
-              className={`w-[30px] md:w-[40px] lg:w-[50px] h-auto mr-3 lg:mr-5`}
-            />
           </div>
         </div>
 
         {/** Right side of Footer */}
         <div className={`absolute top-0 lg:top-auto lg:bottom-0 right-0 text-[#F9EFE8] text-[12px] sm:text-[14px] lg:text-[18px]`}>
-          <p>+2 0100 000 0000</p>
-          <p>info@townsandseas.com</p>
-          <p>Address, Building 01, Cairo, Egypt</p>
+          <p>weare@townsandseas.com</p>
           <br/>
           <p>@2024 Towns & Seas.</p>
           <p>All Rights Reserved.</p>

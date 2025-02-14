@@ -26,7 +26,7 @@ export default function Offer() {
           w-full max-w-[1000px] 
           text-[14px] md:text-[18px] lg:text-[24px] 
           mt-5 md:mt-10 lg:mt-20
-          uppercase 
+          uppercase text-justify
         `}>Towns & Seas was founded on a love for places that tell stories. We take inspiration from the world’s most remarkable cities and coastlines, shaping architecture that respects history while embracing the future.</p>
 
         <Link href={'/about'} className="self-end">
@@ -46,7 +46,7 @@ export default function Offer() {
           <p className={`
             md:w-[50%]
             text-[14px] md:text-[18px] lg:text-[24px] 
-            uppercase 
+            uppercase text-justify
           `}>We design with history in mind and purpose at heart. Every project is shaped by exploration, built with care, and crafted to belong.</p>
         </div>
 

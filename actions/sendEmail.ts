@@ -20,7 +20,7 @@ export const sendEmail = async (message: string, subject: string) => {
     // Mail options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "weare@townsandseas.com ",
+      to: "weare@townsandseas.com",
       subject: subject,
       text: message,
     };

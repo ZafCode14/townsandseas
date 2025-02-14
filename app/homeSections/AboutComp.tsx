@@ -26,7 +26,7 @@ export default function AboutComp({ title, text }:Props) {
         />
       </div>
 
-      <p className="text-[14px] md:text-[18px] uppercase max-w-[750px]">{text}</p>
+      <p className="text-[14px] md:text-[18px] uppercase max-w-[750px] text-justify">{text}</p>
     </div>
   );
 }
