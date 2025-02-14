@@ -46,7 +46,7 @@ export default function Mission() {
           <p className={`
             uppercase 
             w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
-            max-w-full 
+            max-w-full text-justify
           `}>Build spaces that carry the richness of global cultures.Blend architectural heritage with contemporary living.Create homes, streets, and landmarks that feel like they’ve always belonged. We design for the rhythm of life—where every pathway, every facade, every courtyard feels intentional, timeless, and true.</p>
         </div>
 
@@ -62,7 +62,7 @@ export default function Mission() {
           <p className={`
             uppercase 
             w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
-            max-w-full 
+            max-w-full text-justify
           `}>To be the ultimate destination maker, crafting iconic spaces that inspire, connect, and enrich lives. At Towns & Seas, we redefine luxury by delivering exceptional experiences beyond real estate, shaping vibrant communities, and offering the ultimate lifestyle in the world’s most desirable cities</p>
         </div>
       </div>

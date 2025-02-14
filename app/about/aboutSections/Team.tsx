@@ -19,7 +19,7 @@ export default function Team() {
           uppercase self-end
           md:relative top-[-4vw] xl:top-[-50px]
           md:w-[65%] mt-5 md:mt-0
-          text-[14px] md:text-[16px] lg:text-[18px]
+          text-[14px] md:text-[16px] lg:text-[18px] text-justify
         `}>A great building is never just one person’s vision. It’s the work of many minds, many hands. At Towns & Seas, we bring together architects, designers, and cultural researchers who share a passion for storytelling through design.We are not just building spaces. We are shaping experiences, connections, and legacies.</p>
       </div>
 

@@ -58,7 +58,7 @@ export default function Footer() {
         </div>
 
         {/** Right side of Footer */}
-        <div className={`absolute top-0 lg:top-auto lg:bottom-0 right-0 text-[#F9EFE8] text-[12px] sm:text-[14px] lg:text-[18px]`}>
+        <div className={`absolute bottom-0 right-0 text-[#F9EFE8] text-[12px] sm:text-[14px] lg:text-[18px]`}>
           <p>weare@townsandseas.com</p>
           <br/>
           <p>@2024 Towns & Seas.</p>
