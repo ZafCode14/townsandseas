@@ -125,7 +125,7 @@ export default function Contact() {
             Live the story
           </h2>
           <p className={`hidden md:block text-[14px] md:text-[18px] lg:text-[22px] uppercase mt-5 md:mt-10 text-justify`}>Towns & Seas is a collaboration, a craft, a vision. Whether you’re a partner, an architect, or someone looking for a space that feels right, let’s create something that lasts together.</p>
-          <p className={`text-[16px] md:text-[24px] lg:text-[32px] md:self-start md:mt-10`}>BUILT TO BELONG.</p>
+          <p className={`text-[16px] md:text-[24px] lg:text-[32px] md:self-start md:mt-10`}>BUILT TO BELONG</p>
         </div>
         
       </div>
