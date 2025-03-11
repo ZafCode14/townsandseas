@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Unit } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
+import Slider from "./Slider";
 
 type Props = {
   units: Unit[];
@@ -77,15 +78,11 @@ export default function Units({ units }: Props) {
         <div className="
           flex flex-col md:flex-row w-full
         ">
-          <Image
-            src={unit[0].unitImages[0]?.fileUrl || '/images/noImage.svg'}
-            alt="unit image"
-            width={3000}
-            height={3000}
-            className="
-              md:w-[60%] h-[60vw] md:h-[500px] object-cover
-            "
-          />
+          {/** Unit Images */}
+          <div className="md:w-[60%] h-[60vw] md:h-[500px]">
+            <Slider list={unit[0].unitImages}/>
+          </div>
+
           <div className="self-end md:w-[40%] md:ml-3 mt-5">
             <Link 
               target="_blank" 
@@ -104,15 +101,10 @@ export default function Units({ units }: Props) {
               />
               <p className="">360 viewer</p>
             </Link>
-            <Image
-              src={unit[0].unitPlans[0]?.fileUrl || '/images/noImage.svg'}
-              alt="unit image"
-              width={3000}
-              height={3000}
-              className="
-                h-[40vw] md:h-[240px] object-cover
-              "
-            />
+            {/** Plan Images */}
+            <div className="h-[40vw] md:h-[240px]">
+              <Slider list={unit[0].unitPlans}/>
+            </div>
           </div>
 
         </div>

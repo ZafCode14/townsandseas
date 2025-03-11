@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: { params: Promise<any> }) 
           flex flex-col text-[#F9EFE8] text-[14px] sm:text-[16px] lg:text-[20px] p-3 sm:p-5 lg:p-10
           relative
         ">
-          <p className="uppercase text-justify">dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis  nostrud. exerci tation    ullamcorper </p>
+          <p className="uppercase text-justify">{project.description}</p>
           <div className="
             flex justify-around mt-5
           ">
@@ -83,10 +83,12 @@ export default async function ProjectPage({ params }: { params: Promise<any> }) 
           <a href={project.brochure.fileUrl} 
             target="_blank" 
             rel="noopener noreferrer"
-          className="
+          className={`
             lowercase cursor-pointer
-            absolute bottom-3 md:bottom-5 lg:bottom-10 right-3 md:right-5 lg:right-10
-          "><button className="text-[24px] md:text-[32px] hover:underline">download brouchure</button></a>
+            absolute bottom-3 md:bottom-5 lg:bottom-10 
+            right-3 md:right-5 lg:right-10
+            ${!project.brochure.fileUrl && "hidden"}
+          `}><button className="text-[24px] md:text-[32px] hover:underline">download brouchure</button></a>
         </div>
       </div>
 
