@@ -3,7 +3,8 @@ import Hero from "./Hero";
 import Image from "next/image";
 import Units from "./Units";
 
-export default async function ProjectPage({ params }: { params: { projectId: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function ProjectPage({ params }: { params: Promise<any> }) {
   // Fetch the project data using the ID from the dynamic route
   const { projectId } = await params;
   const project = await fetchProjectById(projectId);
@@ -66,16 +67,16 @@ export default async function ProjectPage({ params }: { params: { projectId: str
             flex justify-around mt-5
           ">
             <div className="flex flex-col items-center">
-              <p>{project.farFrom.location1.distance}</p>
-              <p>{project.farFrom.location1.name}</p>
+              <p>{project.farFrom.location1?.distance}</p>
+              <p>{project.farFrom.location1?.name}</p>
             </div>
             <div className="flex flex-col items-center">
-              <p>{project.farFrom.location2.distance}</p>
-              <p>{project.farFrom.location2.name}</p>
+              <p>{project.farFrom.location2?.distance}</p>
+              <p>{project.farFrom.location2?.name}</p>
             </div>
             <div className="flex flex-col items-center">
-              <p>{project.farFrom.location3.distance}</p>
-              <p>{project.farFrom.location3.name}</p>
+              <p>{project.farFrom.location3?.distance}</p>
+              <p>{project.farFrom.location3?.name}</p>
             </div>
           </div>
           {/** Download Brochure */}
@@ -100,7 +101,6 @@ export default async function ProjectPage({ params }: { params: { projectId: str
 
       {/** Units Section */}
       <Units units={filteredUnits}/>
-
     </main>
   );
 }
