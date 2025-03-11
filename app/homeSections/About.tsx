@@ -14,6 +14,5 @@ export default function Info() {
         <Link href={'/about'}><h2 className="text-[40px] md:text-[60px] lg:text-[80px] underline underline-offset-4 decoration-[3px] lg:underline-offset-8">our story</h2></Link>
       </div>
     </section>
-
   );
 }
