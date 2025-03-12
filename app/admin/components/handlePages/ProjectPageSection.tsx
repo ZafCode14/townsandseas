@@ -15,7 +15,6 @@ export default function ProjectPageSection({ projectPage }: Props) {
   const dispatch = useDispatch();
   const toggle = useSelector((state: RootState) => state.admin.value);
 
-  console.log(projectPage.residential);
   return (
     <div className="max-w-full flex flex-col items-center">
       <h1
@@ -25,7 +24,7 @@ export default function ProjectPageSection({ projectPage }: Props) {
         update project page
       </h1>
 
-      <div className={`flex flex-col w-full gap-4 ${toggle === "projectPage" ? "h-auto" : "h-0"} overflow-hidden`}>
+      <div className={`flex flex-col items-center w-full gap-4 ${toggle === "projectPage" ? "h-auto" : "h-0"} overflow-hidden`}>
         
         {/* Residential */}
         <h3 className="text-center uppercase mt-5">Residential Project</h3>
@@ -35,13 +34,13 @@ export default function ProjectPageSection({ projectPage }: Props) {
           addImageToDatabase={addRsidentialImageToDatabase}
         />
         {projectPage.residential.fileUrl && (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full items-center">
             <Image
               src={projectPage.residential.fileUrl}
               alt="Residential project image"
               width={1100}
               height={800}
-              className="flex-1 max-h-[200px] min-w-[200px] object-contain mb-2"
+              className="flex-1 w-[400px] max-w-full object-contain mb-2"
             />
           </div>
         )}
@@ -54,13 +53,13 @@ export default function ProjectPageSection({ projectPage }: Props) {
           addImageToDatabase={addAdminImageToDatabase} 
         />
         {projectPage.admin.fileUrl && (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col items-center w-full">
             <Image
               src={projectPage.admin.fileUrl}
               alt="Admin project image"
               width={1100}
               height={800}
-              className="flex-1 max-h-[200px] min-w-[200px] object-contain mb-2"
+              className="flex-1 w-[400px] max-w-full object-contain mb-2"
             />
           </div>
         )}
@@ -73,13 +72,13 @@ export default function ProjectPageSection({ projectPage }: Props) {
           addImageToDatabase={addCommercialImageToDatabase}
         />
         {projectPage.commercial.fileUrl && (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full items-center">
             <Image
               src={projectPage.commercial.fileUrl}
               alt="Commercial project image"
               width={1100}
               height={800}
-              className="flex-1 max-h-[200px] min-w-[200px] object-contain mb-2"
+              className="flex-1 w-[400px] max-w-full object-contain mb-2"
             />
           </div>
         )}
@@ -92,13 +91,13 @@ export default function ProjectPageSection({ projectPage }: Props) {
           addImageToDatabase={addCoastalImageToDatabase}
         />
         {projectPage.coastal.fileUrl && (
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full items-center">
             <Image
               src={projectPage.coastal.fileUrl}
               alt="Coastal project image"
               width={1100}
               height={800}
-              className="flex-1 max-h-[200px] min-w-[200px] object-contain mb-2"
+              className="flex-1 w-[400px] max-w-full object-contain mb-2"
             />
           </div>
         )}

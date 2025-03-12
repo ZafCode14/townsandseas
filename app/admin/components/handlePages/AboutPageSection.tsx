@@ -62,76 +62,92 @@ export default function AboutPageSection({ aboutPage }: Props) {
       </h1>
       <form
         onSubmit={handleSubmit}
-        className={`flex flex-col w-full gap-2 ${toggle === "aboutPage" ? "h-auto" : "h-0"} overflow-hidden`}
+        className={`flex flex-col w-full gap-2 ${
+          toggle === "aboutPage" ? "h-auto" : "h-0"
+        } overflow-hidden`}
       >
         {/* About Us */}
         <h3 className="text-center uppercase">About Us</h3>
-        <label>title:</label>
+        <label htmlFor="aboutUsTitle" className="lowercase">Title:</label>
         <input
+          id="aboutUsTitle"
           type="text"
           value={formData.aboutUs.title}
           onChange={(e) => handleChange("aboutUs", "title", e.target.value)}
           className="bg-transparent border border-black p-1 w-full"
         />
-        <label>text:</label>
+        <label htmlFor="aboutUsText" className="lowercase">Text:</label>
         <textarea
+          id="aboutUsText"
           value={formData.aboutUs.text}
           onChange={(e) => handleChange("aboutUs", "text", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
-        <label>our story:</label>
+        <label htmlFor="aboutUsStory" className="lowercase">Our Story:</label>
         <textarea
+          id="aboutUsStory"
           value={formData.aboutUs.ourStory}
           onChange={(e) => handleChange("aboutUs", "ourStory", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
 
         {/* Mission & Vision */}
-        <h3 className="text-center uppercase">mission & vision</h3>
-        <label>mission:</label>
+        <h3 className="text-center uppercase">Mission & Vision</h3>
+        <label htmlFor="missionText" className="lowercase">Mission:</label>
         <textarea
+          id="missionText"
           value={formData.missionAndVision.mission}
-          onChange={(e) => handleChange("missionAndVision", "mission", e.target.value)}
+          onChange={(e) =>
+            handleChange("missionAndVision", "mission", e.target.value)
+          }
           className="p-1 w-full bg-transparent border border-black"
         />
-        <label>vision:</label>
+        <label htmlFor="visionText" className="lowercase">Vision:</label>
         <textarea
+          id="visionText"
           value={formData.missionAndVision.vision}
-          onChange={(e) => handleChange("missionAndVision", "vision", e.target.value)}
+          onChange={(e) =>
+            handleChange("missionAndVision", "vision", e.target.value)
+          }
           className="p-1 w-full bg-transparent border border-black"
         />
 
         {/* Core Values */}
         <h3 className="text-center uppercase">Core Values</h3>
-        {Object.entries(formData.coreValues).map(([key, value], index) => (
-          key !== "title" &&
-          typeof value === "object" && (
+        {Object.entries(formData.coreValues).map(([key, value], index) =>
+          key !== "title" && typeof value === "object" ? (
             <div key={key}>
-              <h3 className="uppercase">value {index}</h3>
+              <h3 className="uppercase">Value {index}</h3>
               <h4>{value.title}</h4>
-              <label>title:</label>
+              <label htmlFor={`coreValueTitle${index}`} className="lowercase">Title:</label>
               <input
+                id={`coreValueTitle${index}`}
                 type="text"
                 value={value.title}
-                onChange={(e) => handleChange("coreValues", `${key}.title`, e.target.value)}
+                onChange={(e) =>
+                  handleChange("coreValues", `${key}.title`, e.target.value)
+                }
                 className="bg-transparent border border-black p-1 w-full"
               />
-              <label>text:</label>
+              <label htmlFor={`coreValueText${index}`} className="lowercase">Text:</label>
               <textarea
+                id={`coreValueText${index}`}
                 value={value.text}
-                onChange={(e) => handleChange("coreValues", `${key}.text`, e.target.value)}
+                onChange={(e) =>
+                  handleChange("coreValues", `${key}.text`, e.target.value)
+                }
                 className="p-1 w-full bg-transparent border border-black"
               />
             </div>
-          )
-        ))}
+          ) : null
+        )}
 
         <button
           type="submit"
-          className="bg-blue-600 text-white p-2 mt-4 rounded-md"
+          className="bg-blue-600 text-white p-2 mt-4 rounded-md lowercase"
           disabled={loading}
         >
-          {loading ? "updating..." : "update about page"}
+          {loading ? "Updating..." : "Update About Page"}
         </button>
       </form>
     </div>
