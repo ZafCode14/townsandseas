@@ -1,9 +1,13 @@
 "use client";
+import { AboutPage } from "@/lib/types";
 import { RootState } from "@/store/store";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
-export default function Team() {
+type Props = {
+  aboutPage: AboutPage;
+}
+export default function Team({ aboutPage }: Props) {
   const active = useSelector((state: RootState) => state.about.value);
 
   return (
@@ -20,7 +24,7 @@ export default function Team() {
           md:relative top-[-4vw] xl:top-[-50px]
           md:w-[65%] mt-5 md:mt-0
           text-[14px] md:text-[16px] lg:text-[18px] text-justify
-        `}>A great building is never just one person’s vision. It’s the work of many minds, many hands. At Towns & Seas, we bring together architects, designers, and cultural researchers who share a passion for storytelling through design.We are not just building spaces. We are shaping experiences, connections, and legacies.</p>
+        `}>{aboutPage.peopleBehindTheCraft.text}</p>
       </div>
 
       <Image

@@ -1,8 +1,12 @@
 "use client";
 import { sendEmail } from "@/actions/sendEmail";
+import { MainPage } from "@/lib/types";
 import { useState } from "react";
 
-export default function Contact() {
+type Props = {
+  mainPage: MainPage;
+}
+export default function Contact({ mainPage }: Props) {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -122,10 +126,10 @@ export default function Contact() {
         {/** Title */}
         <div className="text-[#636D46] flex flex-col items-center lg:w-[50%] px-10">
           <h2 className="lg:text-[5vw] text-[40px] 2xl:text-[80px] self-start leading-[50px] lg:leading-[6vw] 2xl:leading-[90px] mt-10">
-            Live the story
+            {mainPage.contact.title}
           </h2>
-          <p className={`hidden md:block text-[14px] md:text-[18px] lg:text-[22px] uppercase mt-5 md:mt-10 text-justify`}>Towns & Seas is a collaboration, a craft, a vision. Whether you’re a partner, an architect, or someone looking for a space that feels right, let’s create something that lasts together.</p>
-          <p className={`text-[16px] md:text-[24px] lg:text-[32px] md:self-start md:mt-10`}>BUILT TO BELONG</p>
+          <p className={`hidden md:block text-[14px] md:text-[18px] lg:text-[22px] uppercase mt-5 md:mt-10 text-justify`}>{mainPage.contact.text}</p>
+          <p className={`text-[16px] md:text-[24px] lg:text-[32px] md:self-start md:mt-10 uppercase`}>{mainPage.contact.slogan}</p>
         </div>
         
       </div>

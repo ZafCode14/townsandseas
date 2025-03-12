@@ -5,8 +5,10 @@ import Mission from "./aboutSections/Mission";
 import Golas from "./aboutSections/Golas";
 import Team from "./aboutSections/Team";
 import Values from "./aboutSections/Values";
+import { fetchAboutPage } from "@/lib/api";
 
-export default function About() {
+export default async function About() {
+  const aboutPage = await fetchAboutPage();
   return (
     <main className={`text-[#252626] flex flex-col items-center min-h-[80vh] pt-24`}>
       <div className="flex justify-between w-[1300px] max-w-full items-center px-5 mb-10 md:mb-24">
@@ -22,11 +24,11 @@ export default function About() {
         <AboutNav/>
       </div>
 
-      <AboutS/>
-      <Mission/>
-      <Golas/>
+      <AboutS aboutPage={aboutPage}/>
+      <Mission aboutPage={aboutPage}/>
+      <Golas aboutPage={aboutPage}/>
       <Values/>
-      <Team/>
+      <Team aboutPage={aboutPage}/>
     </main>
   );
 }

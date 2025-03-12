@@ -1,7 +1,11 @@
+import { MainPage } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Offer() {
+type Props = {
+  mainPage: MainPage
+}
+export default function Offer({ mainPage }:Props) {
   return (
     <section className={`text-[#F9EFE8] bg-[#636D46] flex justify-center py-10 lg:py-24 w-full max-w-full px-5`}>
       <div className="w-[1300px] max-w-full flex flex-col">
@@ -11,7 +15,8 @@ export default function Offer() {
           <h2 className={`
             text-[32px] md:text-[60px] lg:text-[90px]
             leading-[40px] md:leading-[65px] lg:leading-[95px]
-          `}>A name rooted in <br/>experiences</h2>
+            w-[500px] max-w-full
+          `}>{mainPage.discoverMore.title}</h2>
           <Image
             alt="footer logo"
             src={'/images/stamps/stampHomeAbout.png'}
@@ -27,7 +32,7 @@ export default function Offer() {
           text-[14px] md:text-[18px] lg:text-[24px] 
           mt-5 md:mt-10 lg:mt-20
           uppercase text-justify
-        `}>Towns & Seas was founded on a love for places that tell stories. We take inspiration from the world’s most remarkable cities and coastlines, shaping architecture that respects history while embracing the future.</p>
+        `}>{mainPage.discoverMore.text}</p>
 
         <Link href={'/about'} className="self-end">
           <h2 className={`
@@ -42,12 +47,12 @@ export default function Offer() {
             text-[32px] md:text-[60px] lg:text-[90px]
             leading-[40px] md:leading-[65px] lg:leading-[95px]
             md:w-[50%]
-          `}>Our approach</h2>
+          `}>{mainPage.learnMore.title}</h2>
           <p className={`
             md:w-[50%]
             text-[14px] md:text-[18px] lg:text-[24px] 
             uppercase text-justify
-          `}>We design with history in mind and purpose at heart. Every project is shaped by exploration, built with care, and crafted to belong.</p>
+          `}>{mainPage.learnMore.text}</p>
         </div>
 
         <Link href={'/about'} className="self-end">

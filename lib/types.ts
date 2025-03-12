@@ -47,44 +47,19 @@ export type AboutPage = {
     text: string;
     ourStory: string;
   },
-  missionAndVision: {
-    mission: string;
-    vision: string;
+  ourEthos: {
+    title: string;
+    etho1Title: string;
+    etho1Text: string;
+    etho2Title: string;
+    etho2Text: string;
   },
   goalsAndObjectives: {
     ourGoals: string;
     objective: string;
   },
-  partnersAndTeam: {
-    partners: string;
-    theTeam: string;
-  },
-  coreValues: {
-    title: string;
-    value1: {
-      title: string;
-      text: string;
-    },
-    value2: {
-      title: string;
-      text: string;
-    }
-    value3: {
-      title: string;
-      text: string;
-    },
-    value4: {
-      title: string;
-      text: string;
-    },
-    value5: {
-      title: string;
-      text: string;
-    },
-    value6: {
-      title: string;
-      text: string;
-    }
+  peopleBehindTheCraft: {
+    text: string;
   }
 }
 

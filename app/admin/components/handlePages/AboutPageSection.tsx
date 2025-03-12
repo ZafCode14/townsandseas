@@ -16,10 +16,9 @@ export default function AboutPageSection({ aboutPage }: Props) {
 
   const [formData, setFormData] = useState<AboutPage>({
     aboutUs: { ...aboutPage?.aboutUs },
-    missionAndVision: { ...aboutPage?.missionAndVision },
+    ourEthos: { ...aboutPage?.ourEthos },
     goalsAndObjectives: { ...aboutPage?.goalsAndObjectives },
-    partnersAndTeam: { ...aboutPage?.partnersAndTeam },
-    coreValues: { ...aboutPage?.coreValues },
+    peopleBehindTheCraft: { ...aboutPage?.peopleBehindTheCraft },
   });
 
   const [loading, setLoading] = useState(false);
@@ -68,79 +67,85 @@ export default function AboutPageSection({ aboutPage }: Props) {
       >
         {/* About Us */}
         <h3 className="text-center uppercase">About Us</h3>
-        <label htmlFor="aboutUsTitle" className="lowercase">Title:</label>
+        <label className="lowercase">Title:</label>
         <input
-          id="aboutUsTitle"
           type="text"
           value={formData.aboutUs.title}
           onChange={(e) => handleChange("aboutUs", "title", e.target.value)}
           className="bg-transparent border border-black p-1 w-full"
         />
-        <label htmlFor="aboutUsText" className="lowercase">Text:</label>
+        <label className="lowercase">Text:</label>
         <textarea
-          id="aboutUsText"
           value={formData.aboutUs.text}
           onChange={(e) => handleChange("aboutUs", "text", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
-        <label htmlFor="aboutUsStory" className="lowercase">Our Story:</label>
+        <label className="lowercase">Our Story:</label>
         <textarea
-          id="aboutUsStory"
           value={formData.aboutUs.ourStory}
           onChange={(e) => handleChange("aboutUs", "ourStory", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
 
-        {/* Mission & Vision */}
-        <h3 className="text-center uppercase">Mission & Vision</h3>
-        <label htmlFor="missionText" className="lowercase">Mission:</label>
-        <textarea
-          id="missionText"
-          value={formData.missionAndVision.mission}
-          onChange={(e) =>
-            handleChange("missionAndVision", "mission", e.target.value)
-          }
+        {/* Our Ethos */}
+        <h3 className="text-center uppercase">Our Ethos</h3>
+        <label className="lowercase">Title:</label>
+        <input
+          type="text"
+          value={formData.ourEthos.title}
+          onChange={(e) => handleChange("ourEthos", "title", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
-        <label htmlFor="visionText" className="lowercase">Vision:</label>
+        <label className="lowercase">Etho 1 Title:</label>
+        <input
+          type="text"
+          value={formData.ourEthos.etho1Title}
+          onChange={(e) => handleChange("ourEthos", "etho1Title", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+        <label className="lowercase">Etho 1 Text:</label>
         <textarea
-          id="visionText"
-          value={formData.missionAndVision.vision}
-          onChange={(e) =>
-            handleChange("missionAndVision", "vision", e.target.value)
-          }
+          value={formData.ourEthos.etho1Text}
+          onChange={(e) => handleChange("ourEthos", "etho1Text", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+        <label className="lowercase">Etho 2 Title:</label>
+        <input
+          type="text"
+          value={formData.ourEthos.etho2Title}
+          onChange={(e) => handleChange("ourEthos", "etho2Title", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+        <label className="lowercase">Etho 2 Text:</label>
+        <textarea
+          value={formData.ourEthos.etho2Text}
+          onChange={(e) => handleChange("ourEthos", "etho2Text", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
 
-        {/* Core Values */}
-        <h3 className="text-center uppercase">Core Values</h3>
-        {Object.entries(formData.coreValues).map(([key, value], index) =>
-          key !== "title" && typeof value === "object" ? (
-            <div key={key}>
-              <h3 className="uppercase">Value {index}</h3>
-              <h4>{value.title}</h4>
-              <label htmlFor={`coreValueTitle${index}`} className="lowercase">Title:</label>
-              <input
-                id={`coreValueTitle${index}`}
-                type="text"
-                value={value.title}
-                onChange={(e) =>
-                  handleChange("coreValues", `${key}.title`, e.target.value)
-                }
-                className="bg-transparent border border-black p-1 w-full"
-              />
-              <label htmlFor={`coreValueText${index}`} className="lowercase">Text:</label>
-              <textarea
-                id={`coreValueText${index}`}
-                value={value.text}
-                onChange={(e) =>
-                  handleChange("coreValues", `${key}.text`, e.target.value)
-                }
-                className="p-1 w-full bg-transparent border border-black"
-              />
-            </div>
-          ) : null
-        )}
+        {/* Goals & Objectives */}
+        <h3 className="text-center uppercase">Goals and Objectives</h3>
+        <label className="lowercase">Our Goals:</label>
+        <textarea
+          value={formData.goalsAndObjectives.ourGoals}
+          onChange={(e) => handleChange("goalsAndObjectives", "ourGoals", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+        <label className="lowercase">Objective:</label>
+        <textarea
+          value={formData.goalsAndObjectives.objective}
+          onChange={(e) => handleChange("goalsAndObjectives", "objective", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+
+        {/* People Behind The Craft */}
+        <h3 className="text-center uppercase">People Behind The Craft</h3>
+        <label className="lowercase">Text:</label>
+        <textarea
+          value={formData.peopleBehindTheCraft.text}
+          onChange={(e) => handleChange("peopleBehindTheCraft", "text", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
 
         <button
           type="submit"

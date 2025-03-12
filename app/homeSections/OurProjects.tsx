@@ -1,8 +1,12 @@
 import { fetchAllProjects } from "@/lib/api";
+import { MainPage } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 
-export default async function OurProjects() {
+type Props = {
+  mainPage: MainPage;
+}
+export default async function OurProjects({ mainPage }:Props) {
   const projects = await fetchAllProjects();
   const activeProjects = projects.filter((project) => project.active === true)
 
@@ -38,11 +42,10 @@ export default async function OurProjects() {
         </div>
         <div className="flex flex-col flex-[1.2]">
           <h1 className="text-[#636D46] leading-[8vw] text-[9vw] md:text-[7vw] xl:leading-[84px] xl:text-[80px]">
-            Spaces with story, design with depth
+            {mainPage.ourProjects.title} 
           </h1>
           <p className="text-[14px] md:text-[18px] uppercase max-w-[750px] text-justify mt-10">
-            Our devotion to quality and admiration for durable design influence everything we do, from contemporary
-            cultural spaces to residences with an homage to the past.
+            {mainPage.ourProjects.text}
           </p>
         </div>
       </div>

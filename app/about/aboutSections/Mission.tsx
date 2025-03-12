@@ -1,9 +1,13 @@
 "use client";
+import { AboutPage } from "@/lib/types";
 import { RootState } from "@/store/store";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
-export default function Mission() {
+type Props = {
+  aboutPage: AboutPage;
+}
+export default function Mission({ aboutPage }: Props) {
   const active = useSelector((state: RootState) => state.about.value);
 
   return (
@@ -16,7 +20,7 @@ export default function Mission() {
           text-[6.5vw]  xl:text-[90px]
           leading-[6.9vw] xl:leading-[95px]
           mt-5 md:mt-10 lg:mt-20
-        `}>A Vision that travels, a craft that Endures</h2>
+        `}>{aboutPage.ourEthos.title}</h2>
         {/** Image */}
         <Image
           alt="mission stamp"
@@ -41,13 +45,13 @@ export default function Mission() {
             md:w-[30%] flex justify-center
             text-[20px] md:text-[40px] lg:text-[60px]
             leading-[20px] md:leading-[40px] lg:leading-[60px]
-          `}>our ethos are clear</h2>
+          `}>{aboutPage.ourEthos.etho1Title}</h2>
           {/** Text */}
           <p className={`
             uppercase 
             w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
             max-w-full text-justify
-          `}>Build spaces that carry the richness of global cultures.Blend architectural heritage with contemporary living.Create homes, streets, and landmarks that feel like they’ve always belonged. We design for the rhythm of life—where every pathway, every facade, every courtyard feels intentional, timeless, and true.</p>
+          `}>{aboutPage.ourEthos.etho1Text}</p>
         </div>
 
         <div className={`flex flex-col md:flex-row w-full justify-center mt-10 lg:mt-20`}>
@@ -57,13 +61,13 @@ export default function Mission() {
             md:w-[30%] flex justify-center
             text-[20px] md:text-[40px] lg:text-[60px]
             leading-[20px] md:leading-[40px] lg:leading-[60px]
-          `}>Looking ahead</h2>
+          `}>{aboutPage.ourEthos.etho2Title}</h2>
           {/** Text */}
           <p className={`
             uppercase 
             w-[750px] text-[12px] md:text-[14px] lg:text-[17px]
             max-w-full text-justify
-          `}>To be the ultimate destination maker, crafting iconic spaces that inspire, connect, and enrich lives. At Towns & Seas, we redefine luxury by delivering exceptional experiences beyond real estate, shaping vibrant communities, and offering the ultimate lifestyle in the world’s most desirable cities</p>
+          `}>{aboutPage.ourEthos.etho2Text}</p>
         </div>
       </div>
     </section>

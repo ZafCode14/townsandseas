@@ -170,44 +170,19 @@ export const fetchAboutPage = async (): Promise<AboutPage> => {
       text: data?.aboutUs?.text ?? "",
       ourStory: data?.aboutUs?.ourStory ?? "",
     },
-    missionAndVision: {
-      mission: data?.missionAndVision?.mission ?? "",
-      vision: data?.missionAndVision?.vision ?? "",
+    ourEthos: {
+      title: data?.ourEthos?.title ?? "",
+      etho1Title: data?.ourEthos?.etho1Title ?? "",
+      etho1Text: data?.ourEthos?.etho1Text ?? "",
+      etho2Title: data?.ourEthos?.etho2Title ?? "",
+      etho2Text: data?.ourEthos?.etho2Text ?? "",
     },
     goalsAndObjectives: {
       ourGoals: data?.goalsAndObjectives?.ourGoals ?? "",
       objective: data?.goalsAndObjectives?.objective ?? "",
     },
-    partnersAndTeam: {
-      partners: data?.partnersAndTeam?.partners ?? "",
-      theTeam: data?.partnersAndTeam?.theTeam ?? "",
-    },
-    coreValues: {
-      title: data?.coreValues?.title ?? "",
-      value1: {
-        title: data?.coreValues?.value1?.title ?? "",
-        text: data?.coreValues?.value1?.text ?? "",
-      },
-      value2: {
-        title: data?.coreValues?.value2?.title ?? "",
-        text: data?.coreValues?.value2?.text ?? "",
-      },
-      value3: {
-        title: data?.coreValues?.value3?.title ?? "",
-        text: data?.coreValues?.value3?.text ?? "",
-      },
-      value4: {
-        title: data?.coreValues?.value4?.title ?? "",
-        text: data?.coreValues?.value4?.text ?? "",
-      },
-      value5: {
-        title: data?.coreValues?.value5?.title ?? "",
-        text: data?.coreValues?.value5?.text ?? "",
-      },
-      value6: {
-        title: data?.coreValues?.value6?.title ?? "",
-        text: data?.coreValues?.value6?.text ?? "",
-      },
+    peopleBehindTheCraft: {
+      text: data?.peopleBehindTheCraft?.text ?? "",
     },
   };
 };

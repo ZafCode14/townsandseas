@@ -3,18 +3,21 @@ import Hero from "./homeSections/Hero";
 import Info from "./homeSections/About";
 import Offer from "./homeSections/Offer";
 import OurProjects from "./homeSections/OurProjects";
+import { fetchMainPage } from "@/lib/api";
 
-export default function Home() {
+export default async function Home() {
+  const mainPage = await fetchMainPage();
+
   return (
     <main className="flex flex-col items-center">
       <div id="hero"></div>
       <Hero/>
-      <OurProjects/>
+      <OurProjects mainPage={mainPage}/>
       <Info/>
       <div id="offer" className="relative top-[-75px]"></div>
-      <Offer/>
+      <Offer mainPage={mainPage}/>
       <div id="contact" className="relative top-[-75px]"></div>
-      <Contact/>
+      <Contact mainPage={mainPage}/>
     </main>
   );
 }
