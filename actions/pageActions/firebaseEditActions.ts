@@ -13,6 +13,7 @@ export async function updateMainPage({ data }: { data: Partial<MainPage> }) {
       updatedAt: serverTimestamp(),
     });
     revalidatePath('/');
+    revalidatePath('/admin');
     return { success: true };
   } catch (error) {
     console.error("Error updating project:", error);
@@ -29,6 +30,7 @@ export async function updateAboutPage({ data }: { data: Partial<AboutPage> }) {
       updatedAt: serverTimestamp(),
     });
     revalidatePath('/');
+    revalidatePath('/admin');
     return { success: true };
   } catch (error) {
     console.error("Error updating project:", error);
@@ -45,6 +47,7 @@ export async function updateProjectPage({ data }: { data: Partial<ProjectPage> }
       updatedAt: serverTimestamp(),
     });
     revalidatePath('/');
+    revalidatePath('/admin');
     return { success: true };
   } catch (error) {
     console.error("Error updating project:", error);

@@ -67,6 +67,7 @@ export async function deleteMapFromProject({ id, uniqueKey }: { id: string, uniq
       });
 
       revalidatePath('/');
+      revalidatePath('/admin');
       return { success: true };
     }
 
@@ -96,6 +97,7 @@ export async function deletePlanFromProject({ id, uniqueKey }: { id: string, uni
       });
 
       revalidatePath('/');
+      revalidatePath('/admin');
       return { success: true };
     }
 
@@ -124,6 +126,7 @@ export async function deleteBrochureFromProject({ id, uniqueKey }: { id: string,
         updatedAt: serverTimestamp(),
       });
 
+      revalidatePath('/admin');
       revalidatePath('/');
       return { success: true };
     }
