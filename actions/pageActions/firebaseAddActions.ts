@@ -16,8 +16,7 @@ export async function addRsidentialImageToDatabase({ id, fileUrl, uniqueKey }: {
       }
     });
 
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding image to residential:", error);
@@ -38,8 +37,7 @@ export async function addAdminImageToDatabase({ id, fileUrl, uniqueKey }: { id: 
       }
     });
 
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding image to admin:", error);
@@ -60,8 +58,7 @@ export async function addCommercialImageToDatabase({ id, fileUrl, uniqueKey }: {
       }
     });
 
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding image to commercial:", error);
@@ -82,8 +79,7 @@ export async function addCoastalImageToDatabase({ id, fileUrl, uniqueKey }: { id
       }
     });
 
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding image to coastal:", error);

@@ -15,7 +15,7 @@ export async function addUnit({ data }: { data: Unit }) {
       projectId: data.projectId,
       createdAt: serverTimestamp(),
     });
-    revalidatePath('/');
+    revalidatePath('*');
     return { success: true, id: projectRef.id };
   } catch (error) {
     console.error("Error adding project:", error);
@@ -34,7 +34,7 @@ export async function addImageToUnit({ id, fileUrl, uniqueKey }: { id: string, f
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('/');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding unit image:", error);
@@ -53,7 +53,7 @@ export async function addImageToUnitPlan({ id, fileUrl, uniqueKey }: { id: strin
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('/');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error adding plan image:", error);

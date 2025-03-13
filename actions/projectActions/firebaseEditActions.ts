@@ -12,8 +12,7 @@ export async function updateProject({ id, data }: { id: string, data: Partial<Pr
       ...data,
       updatedAt: serverTimestamp(),
     });
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error updating project:", error);
@@ -29,8 +28,7 @@ export async function toggleProjectActiveStatus({ id, currentStatus }: { id: str
       active: !currentStatus, // Toggle the active status
       updatedAt: serverTimestamp(),
     });
-    revalidatePath('/');
-    revalidatePath('/admin');
+    revalidatePath('*');
     return { success: true };
   } catch (error) {
     console.error("Error toggling active status:", error);
