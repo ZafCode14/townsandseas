@@ -8,7 +8,8 @@ export async function deleteUnit({ id }: { id: string }) {
   try {
     const unitRef = doc(firestore, "units", id);
     await deleteDoc(unitRef);
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error deleting project:", error);
@@ -36,7 +37,8 @@ export async function deleteUnitImageFromList({ id, uniqueKey }: { id: string, u
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error deleting unit image:", error);
@@ -64,7 +66,8 @@ export async function deletePlanImageFromList({ id, uniqueKey }: { id: string, u
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error deleting plan image:", error);

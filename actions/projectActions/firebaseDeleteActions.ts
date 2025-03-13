@@ -11,7 +11,8 @@ export async function deleteProject({ id }: { id: string }) {
   try {
     const projectRef = doc(firestore, "projects", id);
     await deleteDoc(projectRef);
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error deleting project:", error);
@@ -39,7 +40,9 @@ export async function deleteHeroImageFromProject({ id, uniqueKey }: { id: string
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error deleting hero image from project:", error);
@@ -66,7 +69,8 @@ export async function deleteMapFromProject({ id, uniqueKey }: { id: string, uniq
         updatedAt: serverTimestamp(),
       });
 
-      revalidatePath('*');
+      revalidatePath('/admin');
+      revalidatePath('/projects');
       return { success: true };
     }
 
@@ -95,7 +99,8 @@ export async function deletePlanFromProject({ id, uniqueKey }: { id: string, uni
         updatedAt: serverTimestamp(),
       });
 
-      revalidatePath('*');
+      revalidatePath('/admin');
+      revalidatePath('/projects');
       return { success: true };
     }
 
@@ -124,7 +129,8 @@ export async function deleteBrochureFromProject({ id, uniqueKey }: { id: string,
         updatedAt: serverTimestamp(),
       });
 
-      revalidatePath('*');
+      revalidatePath('/admin');
+      revalidatePath('/projects');
       return { success: true };
     }
 

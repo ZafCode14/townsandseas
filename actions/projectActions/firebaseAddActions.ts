@@ -14,7 +14,9 @@ export async function addProject({ data }: { data: Project }) {
       active: false,
       createdAt: serverTimestamp(),
     });
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/');
+    revalidatePath('/projects');
     return { success: true, id: projectRef.id };
   } catch (error) {
     console.error("Error adding project:", error);
@@ -33,7 +35,8 @@ export async function addHeroImageToProject({ id, fileUrl, uniqueKey }: { id: st
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error adding hero image to project:", error);
@@ -51,7 +54,8 @@ export async function addMapToProject({ id, fileUrl, uniqueKey }: { id: string, 
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error adding map to project:", error);
@@ -69,7 +73,8 @@ export async function addPlanToProject({ id, fileUrl, uniqueKey }: { id: string,
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error adding plan to project:", error);
@@ -87,7 +92,8 @@ export async function addBrochureToProject({ id, fileUrl, uniqueKey }: { id: str
       updatedAt: serverTimestamp(),
     });
 
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error adding brochure to project:", error);

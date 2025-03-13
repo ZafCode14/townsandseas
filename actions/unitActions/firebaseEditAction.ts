@@ -12,7 +12,8 @@ export async function updateUnit({ id, data }: { id: string, data: Partial<Unit>
       ...data,
       updatedAt: serverTimestamp(),
     });
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error updating unit:", error);
@@ -28,7 +29,8 @@ export async function toggleUnitActiveStatus({ id, currentStatus }: { id: string
       active: !currentStatus,
       updatedAt: serverTimestamp(),
     });
-    revalidatePath('*');
+    revalidatePath('/admin');
+    revalidatePath('/projects');
     return { success: true };
   } catch (error) {
     console.error("Error toggling active status:", error);
