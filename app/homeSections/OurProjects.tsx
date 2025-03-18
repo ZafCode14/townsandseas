@@ -2,6 +2,7 @@ import { fetchAllProjects } from "@/lib/api";
 import { MainPage } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
+import DispatchProject from "./DispatchProject";
 
 type Props = {
   mainPage: MainPage;
@@ -27,6 +28,7 @@ export default async function OurProjects({ mainPage }:Props) {
     py-10 w-[1300px] max-w-full px-3 
     ${availableCategories.length === 0 && "hidden"}
     `}>
+      <DispatchProject projects={activeProjects}/>
       <div className="flex justify-between w-full">
         <div className="flex-1 flex-col">
           <h2 className="text-[#636D46] leading-[8vw] text-[9vw] md:text-[7vw] xl:leading-[100px] xl:text-[80px]">
@@ -56,7 +58,7 @@ export default async function OurProjects({ mainPage }:Props) {
           (project) =>
             project && (
               <div key={project.name} className="
-                w-[calc(50%-0.5rem)] md:w-full h-[32vw] xl:h-[400px] 
+                w-full h-[32vw] xl:h-[400px] 
                 overflow-hidden 
                 flex items-center relative group
               ">

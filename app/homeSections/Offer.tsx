@@ -22,7 +22,7 @@ export default function Offer({ mainPage }:Props) {
             src={'/images/stamps/stampHomeAbout.png'}
             width={300}
             height={300}
-            className={`w-[80px] md:w-[110px] h-auto`}
+            className={`w-[80px] md:w-[200px] h-auto object-contain`}
           />
         </div>
 

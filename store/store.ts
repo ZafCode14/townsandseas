@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import aboutReducer from './aboutSlice'
-import adminReducer from './adminSlice'
+import aboutReducer from './aboutSlice';
+import adminReducer from './adminSlice';
+import projectsReducer from './projectSlice';
 
 const store = configureStore({
   reducer: {
     about: aboutReducer,
     admin: adminReducer,
+    projects: projectsReducer,
   },
 });
 

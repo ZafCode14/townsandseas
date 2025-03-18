@@ -1,4 +1,9 @@
 export type MainPage = {
+  receiverEmail: string;
+  heroImages: {
+    fileUrl: string; // Image
+    uniqueKey: string;
+  }[];
   ourProjects: {
     title: string;
     text: string;
@@ -23,21 +28,49 @@ export type MainPage = {
 }
 
 export type ProjectPage = {
-  residential: {
+  heroImages: {
     fileUrl: string; // Image
     uniqueKey: string;
+  }[];
+  residential: {
+    hero: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    };
+    cover: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    }
   },
   admin: {
-    fileUrl: string; // Image
-    uniqueKey: string;
+    hero: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    };
+    cover: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    }
   },
   commercial: {
-    fileUrl: string; // Image
-    uniqueKey: string;
+    hero: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    };
+    cover: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    }
   },
   coastal: {
-    fileUrl: string; // Image
-    uniqueKey: string;
+    hero: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    };
+    cover: {
+      fileUrl: string; // Image
+      uniqueKey: string;
+    }
   }
 }
 

@@ -1,91 +1,94 @@
 "use server";
 import { firestore } from "@/lib/firebase";
-import { doc, serverTimestamp, updateDoc } from "firebase/firestore";
+import { doc, serverTimestamp, updateDoc, getDoc, arrayUnion } from "firebase/firestore";
 import { revalidatePath } from "next/cache";
 
-/** Add fileUrl and uniqueKey strings to the residentail attribute */
-export async function addRsidentialImageToDatabase({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
+async function updateProjectCategory({
+  id,
+  category,
+  type, // "hero" or "cover"
+  fileUrl,
+  uniqueKey,
+}: {
+  id: string;
+  category: "residential" | "admin" | "commercial" | "coastal";
+  type: "hero" | "cover";
+  fileUrl: string;
+  uniqueKey: string;
+}) {
   try {
     const projectRef = doc(firestore, "projectPage", id);
+    const projectSnap = await getDoc(projectRef);
+    const existingData = projectSnap.exists() ? projectSnap.data()?.[category] || {} : {};
 
     await updateDoc(projectRef, {
-      residential: {
-        fileUrl, 
-        uniqueKey,
-        updatedAt: serverTimestamp(),
-      }
+      [category]: {
+        ...existingData, // Preserve existing data
+        [type]: {
+          fileUrl,
+          uniqueKey,
+          updatedAt: serverTimestamp(),
+        },
+      },
     });
 
-    revalidatePath('/admin');
-    revalidatePath('/projects');
+    revalidatePath("/admin");
+    revalidatePath("/projects");
+
     return { success: true };
   } catch (error) {
-    console.error("Error adding image to residential:", error);
+    console.error(`Error adding ${type} image to ${category}:`, error);
     return { success: false, error };
   }
 }
 
-/** Add fileUrl and uniqueKey strings to the admin attribute */
-export async function addAdminImageToDatabase({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
+// Reusable functions
+export async function addResidentialHeroImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "residential", type: "hero" });
+}
+
+export async function addResidentialCoverImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "residential", type: "cover" });
+}
+
+export async function addAdminHeroImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "admin", type: "hero" });
+}
+
+export async function addAdminCoverImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "admin", type: "cover" });
+}
+
+export async function addCommercialHeroImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "commercial", type: "hero" });
+}
+
+export async function addCommercialCoverImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "commercial", type: "cover" });
+}
+
+export async function addCoastalHeroImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "coastal", type: "hero" });
+}
+
+export async function addCoastalCoverImageToDatabase(params: { id: string; fileUrl: string; uniqueKey: string }) {
+  return updateProjectCategory({ ...params, category: "coastal", type: "cover" });
+}
+
+export async function addHeroImageToMainPage({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
   try {
-    const projectRef = doc(firestore, "projectPage", id);
+    const projectRef = doc(firestore, "mainPage", id);
 
     await updateDoc(projectRef, {
-      admin: {
-        fileUrl, 
-        uniqueKey,
-        updatedAt: serverTimestamp(),
-      }
+      heroImages: arrayUnion({ fileUrl, uniqueKey }),
+      updatedAt: serverTimestamp(),
     });
 
     revalidatePath('/admin');
-    revalidatePath('/projects');
+    revalidatePath('/');
     return { success: true };
   } catch (error) {
-    console.error("Error adding image to admin:", error);
-    return { success: false, error };
-  }
-}
-
-/** Add fileUrl and uniqueKey strings to the commercial attribute */
-export async function addCommercialImageToDatabase({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
-  try {
-    const projectRef = doc(firestore, "projectPage", id);
-
-    await updateDoc(projectRef, {
-      commercial: {
-        fileUrl, 
-        uniqueKey,
-        updatedAt: serverTimestamp(),
-      }
-    });
-
-    revalidatePath('/admin');
-    revalidatePath('/projects');
-    return { success: true };
-  } catch (error) {
-    console.error("Error adding image to commercial:", error);
-    return { success: false, error };
-  }
-}
-
-/** Add fileUrl and uniqueKey strings to the costal attribute */
-export async function addCoastalImageToDatabase({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
-  try {
-    const projectRef = doc(firestore, "projectPage", id);
-
-    await updateDoc(projectRef, {
-      coastal: {
-        fileUrl, 
-        uniqueKey,
-        updatedAt: serverTimestamp(),
-      }
-    });
-
-    revalidatePath('*');
-    return { success: true };
-  } catch (error) {
-    console.error("Error adding image to coastal:", error);
+    console.error("Error adding hero image to main page:", error);
     return { success: false, error };
   }
 }

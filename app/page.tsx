@@ -8,10 +8,13 @@ import { fetchMainPage } from "@/lib/api";
 export default async function Home() {
   const mainPage = await fetchMainPage();
 
+  const images = mainPage.heroImages.map((image) => image.fileUrl);
+
   return (
     <main className="flex flex-col items-center">
       <div id="hero"></div>
-      <Hero/>
+      <Hero images={images}/>
+      <div id="projects"></div>
       <OurProjects mainPage={mainPage}/>
       <Info/>
       <div id="offer" className="relative top-[-75px]"></div>

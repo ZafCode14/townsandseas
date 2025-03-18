@@ -106,6 +106,8 @@ export const fetchMainPage = async (): Promise<MainPage> => {
   const data = docSnap.data();
 
   return {
+    receiverEmail: data?.receiverEmail || "",
+    heroImages: data?.heroImages ?? [],
     ourProjects: {
       title: data?.ourProjects?.title ?? "",
       text: data?.ourProjects?.text ?? "",
@@ -138,21 +140,46 @@ export const fetchProjectPage = async (): Promise<ProjectPage> => {
   const data = docSnap.data();
 
   return {
+    heroImages: data?.heroImages ?? [],
     residential: {
-      fileUrl: data?.residential?.fileUrl ?? "",
-      uniqueKey: data?.residential?.uniqueKey ?? "",
+      hero: {
+        fileUrl: data?.residential?.hero.fileUrl ?? "",
+        uniqueKey: data?.residential?.hero.uniqueKey ?? "",
+      },
+      cover: {
+        fileUrl: data?.residential?.cover.fileUrl ?? "",
+        uniqueKey: data?.residential?.cover.uniqueKey ?? "",
+      }
     },
     admin: {
-      fileUrl: data?.admin?.fileUrl ?? "",
-      uniqueKey: data?.admin?.uniqueKey ?? "",
+      hero: {
+        fileUrl: data?.admin?.hero.fileUrl ?? "",
+        uniqueKey: data?.admin?.hero.uniqueKey ?? "",
+      },
+      cover: {
+        fileUrl: data?.admin?.cover.fileUrl ?? "",
+        uniqueKey: data?.admin?.cover.uniqueKey ?? "",
+      }
     },
     commercial: {
-      fileUrl: data?.commercial?.fileUrl ?? "",
-      uniqueKey: data?.commercial?.uniqueKey ?? "",
+      hero: {
+        fileUrl: data?.commercial?.hero?.fileUrl ?? "",
+        uniqueKey: data?.commercial?.hero?.uniqueKey ?? "",
+      },
+      cover: {
+        fileUrl: data?.commercial?.cover?.fileUrl ?? "",
+        uniqueKey: data?.commercial?.cover?.uniqueKey ?? "",
+      }
     },
     coastal: {
-      fileUrl: data?.coastal?.fileUrl ?? "",
-      uniqueKey: data?.coastal?.uniqueKey ?? "",
+      hero: {
+        fileUrl: data?.coastal?.hero?.fileUrl ?? "",
+        uniqueKey: data?.coastal?.hero?.uniqueKey ?? "",
+      },
+      cover: {
+        fileUrl: data?.coastal?.cover?.fileUrl ?? "",
+        uniqueKey: data?.coastal?.cover?.uniqueKey ?? "",
+      }
     },
   };
 };
