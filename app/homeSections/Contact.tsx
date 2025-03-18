@@ -15,6 +15,8 @@ export default function Contact({ mainPage }: Props) {
     subject: "",
   });
 
+  const receiver = mainPage.receiverEmail;
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -37,7 +39,7 @@ export default function Contact({ mainPage }: Props) {
     `;
 
     try {
-      await sendEmail(emailContent, subject);
+      await sendEmail(emailContent, subject, receiver);
       alert("Your message has been sent successfully!");
       setFormData({
         name: "",

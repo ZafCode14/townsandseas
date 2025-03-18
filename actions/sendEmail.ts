@@ -1,7 +1,7 @@
 "use server";
 import nodemailer from 'nodemailer';
 
-export const sendEmail = async (message: string, subject: string) => {
+export const sendEmail = async (message: string, subject: string, receiver: string) => {
   try {
     // Validate the input
     if (!message) {
@@ -20,7 +20,7 @@ export const sendEmail = async (message: string, subject: string) => {
     // Mail options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "weare@townsandseas.com",
+      to: receiver,
       subject: subject,
       text: message,
     };
