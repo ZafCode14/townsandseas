@@ -11,7 +11,7 @@ export default function Projects({ projects }: Props) {
   const searchParams = useSearchParams();
   const search: string = searchParams.get("category") || "residential";
 
-  const filteredProjects = projects.filter((project) => project.category === search);
+  const filteredProjects = projects.filter((project) => project.category.toLowerCase() === search);
 
   return (
     <div className={`flex flex-wrap w-[1300px] max-w-full px-3 py-10`}>

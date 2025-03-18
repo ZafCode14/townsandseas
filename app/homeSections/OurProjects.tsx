@@ -1,5 +1,5 @@
-import { fetchAllProjects } from "@/lib/api";
-import { MainPage } from "@/lib/types";
+import { fetchAllProjects, fetchProjectPage } from "@/lib/api";
+import { MainPage, ProjectPage } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
 import DispatchProject from "./DispatchProject";
@@ -9,10 +9,12 @@ type Props = {
 }
 export default async function OurProjects({ mainPage }:Props) {
   const projects = await fetchAllProjects();
+  const projectPage = await fetchProjectPage();
+
   const activeProjects = projects.filter((project) => project.active === true)
 
   // Fetch the last project image for each category
-  const availableCategories = [...new Set(activeProjects.flatMap((project) => project.category))];
+  const availableCategories = [...new Set(activeProjects.flatMap((project) => project.category.toLocaleLowerCase()))];
 
   const lastProjects = availableCategories.map((category) => ({
     name: category,
@@ -62,10 +64,12 @@ export default async function OurProjects({ mainPage }:Props) {
                 overflow-hidden 
                 flex items-center relative group
               ">
-                {project.image ?
+                {project.name ?
                   <Image
                     alt={`${project.name} project`}
-                    src={project.image.fileUrl}
+                    src={
+                      (projectPage[project.name as keyof ProjectPage] as { cover: { fileUrl: string } }).cover.fileUrl
+                    }
                     width={2000}
                     height={2000}
                     className="h-full w-full object-cover duration-300 transform group-hover:scale-110"
