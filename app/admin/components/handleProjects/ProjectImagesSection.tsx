@@ -86,6 +86,7 @@ export default function ProjectImagesSection({ project }: Props) {
         id={project.id}
         addImageToDatabase={addBrochureToProject}
         noSizeLimit={true}
+        type={"pdf"}
       />
       { project.brochure.fileUrl &&
       <div className="flex flex-col w-full">

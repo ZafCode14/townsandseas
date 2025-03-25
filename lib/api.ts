@@ -106,6 +106,10 @@ export const fetchMainPage = async (): Promise<MainPage> => {
   const data = docSnap.data();
 
   return {
+    popupVideo: {
+      fileUrl: data?.popupVideo?.fileUrl || "",
+      uniqueKey: data?.popupVideo?.uniqueKey || "" 
+    },
     receiverEmail: data?.receiverEmail || "",
     heroImages: data?.heroImages ?? [],
     ourProjects: {

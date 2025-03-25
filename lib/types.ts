@@ -4,6 +4,10 @@ export type MainPage = {
     fileUrl: string; // Image
     uniqueKey: string;
   }[];
+  popupVideo: {
+    fileUrl: string; // Video
+    uniqueKey: string;
+  };
   ourProjects: {
     title: string;
     text: string;

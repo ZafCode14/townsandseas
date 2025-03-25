@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import AddImage from "../handleImages/AddImage";
 import Image from "next/image";
 import DeleteImage from "../handleImages/DeleteImage";
-import { addHeroImageToMainPage } from "@/actions/pageActions/firebaseAddActions";
-import { deleteHeroImageFromMainPage } from "@/actions/pageActions/firebaseDeleteActions";
+import { addHeroImageToMainPage, addVideoPopup } from "@/actions/pageActions/firebaseAddActions";
+import { deleteHeroImageFromMainPage, deletePopupVideo } from "@/actions/pageActions/firebaseDeleteActions";
 
 type Props = {
   mainPage: MainPage;
@@ -36,6 +36,7 @@ export default function MainPageSection({ mainPage }: Props) {
   ];
 
   const [formData, setFormData] = useState<MainPage>({
+    popupVideo: mainPage.popupVideo,
     receiverEmail: mainPage.receiverEmail,
     ourProjects: { ...mainPage.ourProjects },
     ourStory: { ...mainPage.ourStory },
@@ -102,6 +103,30 @@ export default function MainPageSection({ mainPage }: Props) {
             </div>
           ))}
         </div>
+
+        <h3 className="text-center uppercase">Add Popup video</h3>
+        <AddImage id="gIv6uKZrrw1nNrNlDWMw" addImageToDatabase={addVideoPopup} type="video" noSizeLimit={true}/>
+        {
+        mainPage.popupVideo.fileUrl &&
+          <div className="relative w-full flex flex-col items-center">
+            <video
+              src={mainPage.popupVideo.fileUrl}
+              autoPlay
+              loop
+              muted
+              className="w-full max-w-[800px] rounded-lg shadow-md"
+            />
+            
+            {/* Button to delete the video */}
+            <div className="w-full flex flex-col mt-2">
+              <DeleteImage 
+                uniqueKey={mainPage.popupVideo.uniqueKey} 
+                id="gIv6uKZrrw1nNrNlDWMw" 
+                deleteImageFromDatabase={deletePopupVideo} 
+              />
+            </div>
+          </div>
+        }
 
         <label htmlFor="receiverEmail" className="lowercase">Receiver Email</label>
         <input

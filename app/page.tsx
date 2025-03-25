@@ -4,6 +4,7 @@ import Info from "./homeSections/About";
 import Offer from "./homeSections/Offer";
 import OurProjects from "./homeSections/OurProjects";
 import { fetchMainPage } from "@/lib/api";
+import VideoPopup from "./homeSections/VideoPopup";
 
 export default async function Home() {
   const mainPage = await fetchMainPage();
@@ -12,6 +13,7 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center">
+      <VideoPopup video={mainPage.popupVideo.fileUrl}/>
       <div id="hero"></div>
       <Hero images={images}/>
       <div id="projects"></div>

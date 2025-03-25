@@ -7,6 +7,7 @@ type Props = {
   addImageToDatabase: any;
   noSizeLimit?: boolean;
   uKey: string;
+  type?: string;
 };
 export default function AddAndDeleteImage({ id, addImageToDatabase, noSizeLimit, uKey }: Props) {
   const [image, setImage] = useState<File | null>(null);

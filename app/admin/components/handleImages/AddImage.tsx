@@ -6,87 +6,89 @@ type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   addImageToDatabase: any;
   noSizeLimit?: boolean;
+  type?: string;
 };
-export default function AddImage({ id, addImageToDatabase, noSizeLimit }: Props) {
-  const [image, setImage] = useState<File | null>(null);
+
+export default function AddImage({ id, addImageToDatabase, noSizeLimit, type = "image" }: Props) {
+  const [file, setFile] = useState<File | null>(null);
   const [progress, setProgress] = useState<number>(0);
   const [isUploading, setIsUploading] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedImage = e.target.files ? e.target.files[0] : null;
-    
-    if (selectedImage) {
-      // Check if the file size is less than 500 KB (500 * 1024 bytes)
-      if (selectedImage.size > 2100 * 1024 && !noSizeLimit) {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = e.target.files ? e.target.files[0] : null;
+
+    if (selectedFile) {
+      // Determine max size limit (only if noSizeLimit is false)
+      const maxSize = 2100 * 1024; // 2100 KB
+      if (!noSizeLimit && selectedFile.size > maxSize) {
         alert("File size must be less than 2100 KB");
-        setImage(null); // Clear the image if it's too large
+        setFile(null);
       } else {
-        setImage(selectedImage);
+        setFile(selectedFile);
       }
     }
   };
 
-  const handleUploadImage = async () => {
+  const handleUploadFile = async () => {
     try {
       setIsUploading(true);
 
-      // Handle image upload if an image is selected
-      if (image) {
-        // Upload the image and get the file URL and unique key
-        const { fileUrl, uniqueKey } = await handleUpload(image, setProgress);
+      if (file) {
+        const { fileUrl, uniqueKey } = await handleUpload(file, setProgress);
 
-        // Add the image to the project
         await addImageToDatabase({ id, fileUrl, uniqueKey });
       } else {
-        alert("Please add an image");
+        alert("Please add a file");
       }
     } catch (error) {
-      alert("Save failed");
-      console.error("Save failed:", error);
+      alert("Upload failed");
+      console.error("Upload failed:", error);
     } finally {
       setIsUploading(false);
-      setImage(null);
+      setFile(null);
 
-      // Reset the file input
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
     }
   };
 
+  // Determine the accepted file type
+  const acceptedFileTypes = type === "video" ? "video/*" : "image/*";
+
   return (
-    <div className={`flex flex-col`}>
-      <div className={`flex w-full`}>
-        {/** Input Image */}
+    <div className="flex flex-col">
+      <div className="flex w-full">
+        {/* File Input */}
         <input
-          id="heroImages"
+          id="fileUploader"
           type="file"
-          accept={noSizeLimit ? "application/pdf" : "image/*"}
-          onChange={handleImageChange}
-          className={`my-5 mt-2 w-[220px] text-[12px]`}
+          accept={acceptedFileTypes}
+          onChange={handleFileChange}
+          className="my-5 mt-2 w-[220px] text-[12px]"
           ref={fileInputRef}
         />
 
-        {/* Button to add the new element */}
+        {/* Upload Button */}
         <button
           type="button"
-          onClick={handleUploadImage}
+          onClick={handleUploadFile}
           className={`
             relative flex-1
+            lowercase
             max-w-[150px] h-[32px]
-            ${isUploading ? "bg-[gray]" : "bg-green-600 hover:bg-green-700"} text-white rounded mb-5 w-[100px]
+            ${isUploading ? "bg-gray-400" : "bg-green-600 hover:bg-green-700"} 
+            text-white rounded mb-5 w-[100px]
           `}
         >
           {!isUploading ? (
-            "upload"
+            "Upload"
           ) : (
             <div
               className="rounded-md h-full bg-[#328bff] absolute left-0 top-0"
-              style={{
-                width: `${progress}%`,
-              }}
+              style={{ width: `${progress}%` }}
             ></div>
           )}
           {isUploading && (

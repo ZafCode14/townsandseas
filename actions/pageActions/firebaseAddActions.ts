@@ -92,3 +92,21 @@ export async function addHeroImageToMainPage({ id, fileUrl, uniqueKey }: { id: s
     return { success: false, error };
   }
 }
+
+export async function addVideoPopup({ id, fileUrl, uniqueKey }: { id: string, fileUrl: string, uniqueKey: string }) {
+  try {
+    const projectRef = doc(firestore, "mainPage", id);
+
+    await updateDoc(projectRef, {
+      popupVideo: { fileUrl, uniqueKey },
+      updatedAt: serverTimestamp(),
+    });
+
+    revalidatePath('/admin');
+    revalidatePath('/');
+    return { success: true };
+  } catch (error) {
+    console.error("Error adding popup: ", error);
+    return { success: false, error };
+  }
+}
