@@ -33,6 +33,7 @@ async function updateProjectCategory({
     });
 
     revalidatePath("/admin");
+    revalidatePath("/");
     revalidatePath("/projects");
 
     return { success: true };

@@ -47,6 +47,7 @@ export async function updateProjectPage({ data }: { data: Partial<ProjectPage> }
       updatedAt: serverTimestamp(),
     });
     revalidatePath('/admin');
+    revalidatePath('/');
     revalidatePath('/projects');
     return { success: true };
   } catch (error) {
