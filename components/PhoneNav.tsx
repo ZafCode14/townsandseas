@@ -2,8 +2,12 @@
 import Link from "next/link";
 import HeaderLink from "./HeaderLink";
 import { useState } from "react";
+import { Project } from "@/lib/types";
 
-export default function PhoneNav() {
+type Props = {
+  projects: Project[]
+}
+export default function PhoneNav({ projects }: Props) {
   const [show, setShow] = useState(false);
   return (
     <>
@@ -31,7 +35,14 @@ export default function PhoneNav() {
         `} onClick={(e) => e.stopPropagation()}>
           <div onClick={() => setShow(false)}> <HeaderLink name="ABOUT US" path="/about"/> </div>
           <Link onClick={() => setShow(false)} href={'/#offer'} className="hover:underline py-5 lg:py-0">WHAT WE OFFER</Link>
-          <div onClick={() => setShow(false)}> <HeaderLink name="OUR PROJECTS" path="/projects"/> </div>
+          {
+            projects.length > 0 ?
+            <Link href={'/#projects'} className="hover:underline">OUR PROJECTS</Link>
+            :
+            <div>
+              <HeaderLink name="OUR PROJECTS" path="/projects"/>
+            </div> 
+          }
           <Link onClick={() => setShow(false)} href={'/#contact'} className="hover:underline py-5 lg:py-0">GET IN TOUCH</Link>
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function Header() {
         </div>
 
         <div className={`${p === '/admin' && "hidden"} h-full flex items-center`}>
-          <PhoneNav/>
+          <PhoneNav projects={projects}/>
         </div>
       </div>
 
