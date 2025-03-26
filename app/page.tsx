@@ -18,7 +18,7 @@ export default async function Home() {
       <Hero images={images}/>
       <div id="projects"></div>
       <OurProjects mainPage={mainPage}/>
-      <Info/>
+      <Info mainPage={mainPage}/>
       <div id="offer" className="relative top-[-75px]"></div>
       <Offer mainPage={mainPage}/>
       <div id="contact" className="relative top-[-75px]"></div>

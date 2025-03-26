@@ -120,6 +120,23 @@ export default function AboutPageSection({ aboutPage }: Props) {
           onChange={(e) => handleChange("ourEthos", "etho1Text", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
+
+        <label htmlFor="ethos2Title" className="lowercase">Etho 2 Title:</label>
+        <input
+          id="ethos2Title"
+          type="text"
+          value={formData.ourEthos.etho2Title}
+          onChange={(e) => handleChange("ourEthos", "etho2Title", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+        
+        <label htmlFor="ethos2Text" className="lowercase">Etho 2 Text:</label>
+        <textarea
+          id="ethos2Text"
+          value={formData.ourEthos.etho2Text}
+          onChange={(e) => handleChange("ourEthos", "etho2Text", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
         
         {/* Goals & Objectives */}
         <h3 className="text-center uppercase">Goals and Objectives</h3>
@@ -136,6 +153,16 @@ export default function AboutPageSection({ aboutPage }: Props) {
           id="objective"
           value={formData.goalsAndObjectives.objective}
           onChange={(e) => handleChange("goalsAndObjectives", "objective", e.target.value)}
+          className="p-1 w-full bg-transparent border border-black"
+        />
+
+        {/** People Behind the craft  */}
+        <h3 className="text-center uppercase">People Behind The Craft</h3>
+        <label htmlFor="peopleBehindTheCraft" className="lowercase">text:</label>
+        <textarea
+          id="peopleBehindTheCraft"
+          value={formData.peopleBehindTheCraft.text}
+          onChange={(e) => handleChange("peopleBehindTheCraft", "text", e.target.value)}
           className="p-1 w-full bg-transparent border border-black"
         />
         

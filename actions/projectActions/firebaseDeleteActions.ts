@@ -12,6 +12,7 @@ export async function deleteProject({ id }: { id: string }) {
     const projectRef = doc(firestore, "projects", id);
     await deleteDoc(projectRef);
     revalidatePath('/admin');
+    revalidatePath('/');
     revalidatePath('/projects');
     return { success: true };
   } catch (error) {

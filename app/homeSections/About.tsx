@@ -1,12 +1,16 @@
 import Link from "next/link";
 import AboutComp from "./AboutComp";
+import { MainPage } from "@/lib/types";
 
-export default function Info() {
+type Props = {
+  mainPage: MainPage;
+}
+export default function Info({mainPage}: Props) {
   return (
     <section className={`text-[#252626] flex flex-col py-10 md:py-24 w-[1300px] max-w-full px-5`}>
       <AboutComp
-        title="Designed with depth, built for generations"
-        text="Some places leave a mark. A street that feels like home, a view that lingers with you. At Towns & Seas, we develop spaces that resonate."
+        title={mainPage.ourStory.title}
+        text={mainPage.ourStory.text}
       />
 
       <div className="self-end mt-10 md:mt-20 text-[#636D46] flex flex-col items-center">

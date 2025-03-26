@@ -30,6 +30,7 @@ export async function toggleProjectActiveStatus({ id, currentStatus }: { id: str
       updatedAt: serverTimestamp(),
     });
     revalidatePath('/admin');
+    revalidatePath('/');
     revalidatePath('/projects');
     return { success: true };
   } catch (error) {
