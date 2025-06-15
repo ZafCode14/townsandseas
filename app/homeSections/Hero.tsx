@@ -20,6 +20,9 @@ export default function Hero({ images }: Props) {
 
   return (
     <section className="relative h-[400px] md:h-[700px] lg:h-screen w-full overflow-hidden">
+      {/* Visually hidden but SEO-visible heading */}
+      <h1 className="sr-only">Towns And Seas</h1>
+
       {images.map((image, i) => (
         <Image
           key={i}

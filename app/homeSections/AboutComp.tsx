@@ -10,10 +10,10 @@ export default function AboutComp({ title, text }:Props) {
       {/** Main heading */}
       <div className="w-full flex relative mb-5 items-center">
         <div className="flex w-[1000px] max-w-full relative z-10">
-          <h1 className={`
+          <h2 className={`
             text-[#636D46]
             leading-[8vw] text-[9vw] md:text-[7vw] xl:leading-[100px] xl:text-[95px]
-          `}>{title}</h1>
+          `}>{title}</h2>
         </div>
         <Image
           alt="info stamp"
